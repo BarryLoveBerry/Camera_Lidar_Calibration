@@ -1,0 +1,5 @@
+
+<library path="lib/liblidar_add">
+<class name="livox_cam_calib/Lidar_addNodelet" type="livox_cam_calib::Lidar_addNodelet" base_class_type="nodelet::Nodelet" />
+</library>
+

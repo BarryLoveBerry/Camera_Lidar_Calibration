@@ -1,0 +1,20 @@
+<launch>
+  <param name="/use_sim_time" value="true" />
+  <arg name="color_distance" default="0.1" />
+
+  
+  <node pkg="livox_cam_calib" type="livox_cam_calib" name="livox_cam_calib_node" output="screen">
+        <param name="camera_topic" type="str" value="/camera_back_l/image_raw" />
+        <param name="lidar_topic" type="str" value="/accumulate_cloud" />
+        <param name="file_name" type="str" value="app.yaml" />
+        <param name="result_save_file_path" type="str" value="/home/jyzn/huangwei/calibration/livox_cam_calib/data/" />
+        <param name="bag_num" type="int" value="6" />
+
+    <param name="calib_file_path" type="str" value="$(find livox_cam_calib)/config" />
+
+    <param name="color_distance" type="double" value="$(arg color_distance)" />
+
+  </node>
+  <node pkg="rviz" name="rviz1" type="rviz"  args="-d $(find livox_cam_calib)/rviz/colored_pointcloud161.rviz">
+  </node>
+</launch>

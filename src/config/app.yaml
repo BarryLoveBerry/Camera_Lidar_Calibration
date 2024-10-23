@@ -1,0 +1,23 @@
+%YAML:1.0
+---
+ImageSize: !!opencv-ImageSize
+    width: 1280
+    height: 720
+# 标定板的内部角点数量（行，列）
+ChessBoardSize: !!opencv-ImageSize
+    rows: 9                        
+    cols: 6
+grid_length: 0.1
+
+CameraMat: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 748.22879, 0., 676.99718, 0.,
+       748.93722, 248.56778, 0., 0., 1. ]
+DistCoeff: !!opencv-matrix
+   rows: 1
+   cols: 5
+   dt: d
+   data: [ -0.307838, 0.088072,
+       -0.000009, 0.000148, 0. ]
